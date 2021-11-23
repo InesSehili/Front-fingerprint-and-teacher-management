@@ -1,0 +1,131 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+
+                      
+<!--                      <h4 class="card-title ">Simple Table</h4>-->
+                      <p class="card-category"> TABLE DES ENSEIGNANTS</p>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-primary">
+ <th> ID </th> <th> Nom </th> <th> Prenom </th>  <th> Adresse email </th> <th> Numéro tel </th>
+                              </thead>
+                              <tbody>
+                                  <tr *ngFor="let e of listEnseignant ">
+                                      <td>
+                                          {{e.id}}
+                                      </td>
+                                      <td>
+                                          {{e.nom}}
+                                      </td>
+                                      <td>
+                                          {{e.prenom}}
+                                      </td>
+                                      <td>
+                                          {{e.email}}
+                                      </td>
+                                      <td class="text-primary">
+                                          {{e.numTel}}
+                                      </td>
+                                      <td><button class="btn btn-danger"
+                                                  *ngIf="e.empreinte==='nonEnregistrer'"
+                                                  (click)="OnSubmitEmprenite(e.id)">ajouter empreinte</button>
+                                      <button class="btn btn-success"
+                                                  *ngIf="e.empreinte==='Enregistrer'"
+                                                  (click)="OnSubmitEmprenite(e.id)">ajouter nouvel empreinte</button> </td>
+                                      <td><button class="btn btn-danger"
+                                                  (click)="OnDeleteEnseignant(e.id)">supprimer</button></td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+<!--                      <h4 class="card-title ">Liste salle</h4>-->
+                      <p class="card-category"> LISTE SALLE</p>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-primary">
+                              <th> Numéro salle </th> <th> Etage </th> <th> Type salle </th>
+<!--                              <th> Adresse email </th> <th> Numéro tel </th>-->
+                              </thead>
+                              <tbody>
+                              <tr *ngFor="let e of listSalle ">
+                                  <td>
+                                      {{e.num}}
+                                  </td>
+                                  <td>
+                                      {{e.etage}}
+                                  </td>
+                                  <td>
+                                      {{e.type}}
+                                  </td>
+                                  <td><button class="btn btn-danger"
+                                              (click)="OnDeleteSalle(e.id)">supprimer</button></td>
+                              </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-12">
+              <div class="card card-plain">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title mt-0"> Emplois du Temps M2</h4>
+                      <p class="card-category"> en forme de Table d'accées</p>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table table-hover">
+                              <thead class="text-primary">
+                              <th> ID </th> <th> Jour </th> <th> Seance </th> <th> Enseignant </th> <th> Salle </th>
+                              <!--                              <th> Adresse email </th> <th> Numéro tel </th>-->
+                              </thead>
+                              <tbody>
+                              <tr *ngFor="let e of listTableAccee ">
+                                  <td>
+
+                                      {{e.id}}
+                                  </td>
+                                  <td>
+
+                                      {{e.jour.name}}
+                                  </td>
+                                  <td>
+
+                                      {{e.seance.debut}} {{e.seance.fin}}
+                                  </td>
+
+                                  <td>
+                                     
+                                      {{e.enseignant.nom}}
+                                      {{e.enseignant.prenom}}
+                                  </td>
+                                  <td>
+
+                                25
+                                  </td>
+                               <td><button class="btn btn-danger"
+                                                  (click)="OnDeleteTableAcces(e.id)">supprimer</button></td>
+                              </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

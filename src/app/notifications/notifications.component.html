@@ -1,0 +1,56 @@
+<div class="main-content">
+  <div class="container-fluid">
+     <div class="card">
+          <div class="card-header card-header-danger">
+              <h3 class="card-title">Empreinte</h3>
+              <p class="card-category">Cliquez sur les étapes suivante et suivez les instructions .
+
+
+          </div>
+
+
+          <div class="col-md-12">
+              <div class="places-buttons">
+                  <div class="row">
+
+                      <div class="col-md-6 ml-auto mr-auto text-center">
+                          <img src="/assets/img/EmpreinteComplete.png"/>
+                          <h4 class="card-title">
+                              Enregistrement empreinte
+                              <p class="category">vous allez enregistrer l'empreinte de l'enseignant <h class="text-primary" >{{Enseignant.nom}} {{Enseignant.prenom}}</h></p>
+                          </h4>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+                          <div class="row">
+                              <div class="col-md-4">
+                                  <button mat-raised-button class="btn btn-danger btn-block" (click)="showEtape1()">Etape 1</button>
+                              </div>
+                              <div class="col-md-4">
+                                  <button mat-raised-button class="btn btn-warning btn-block" (click)="showEtape2()">Etape 2</button>
+                              </div>
+                              <div class="col-md-4">
+                                  <button mat-raised-button class="btn btn-success btn-block" (click)="showEtape3()">Confirmer</button>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <p class="text-success" *ngIf="etape==='etape3'">l'empreinte de l'enseignant <h class="text-primary" >{{Enseignant.nom}} {{Enseignant.prenom}}</h> a été bien enregistrée</p>
+<!--                              <p class="text-danger" *ngIf="!isidEmpreinte && etape==='etape3'">Réssayer une autre fois...</p>-->
+                              <h1 *ngIf="etape==='etape1'">Mettez le doit de l'enseignant sur le capteur d'empreinte digitale ... et enlevez-le</h1>
+                              <h1 *ngIf="etape==='etape2'">Mettez le doit de l'enseignant sur le capteur d'empreinte digitale une autre fois ... et enlevez-le</h1>
+
+                          </div>
+                      </div>
+                  </div>
+
+
+                  </div>
+
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+

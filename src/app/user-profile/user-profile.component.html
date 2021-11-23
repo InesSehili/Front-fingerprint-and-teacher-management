@@ -1,0 +1,173 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Ajouter enseignant</h4>
+                        <p class="card-category">Ou modifier ses informations </p>
+                    </div>
+                    <div class="card-body">
+                        <form (ngSubmit)="OnSubmit(f)" #f="ngForm">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Nom" type="text" name="nom" ngModel required >
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Prenom" type="text" name="prenom" ngModel required >
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-md-8">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Address email" type="email" name="email" ngModel required>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Mot de passe" type="password" name="motDePasse" ngModel>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <!--<div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput  type="hidden" name="empreinte" value="nonEnregistrer" ngModel>
+                                  </mat-form-field>
+                                </div>-->
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Numéro Tel" type="text" name="numTel" ngModel>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right"[disabled]="f.invalid" >Valider</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Ajouter Salle</h4>
+                        <p class="card-category">Ou modifier ses informations </p>
+                    </div>
+                    <div class="card-body">
+                        <form (ngSubmit)="OnSubmit2(g)" #g="ngForm">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Numéro salle" type="text" name="num" ngModel required >
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Etage" type="text" name="etage" ngModel required >
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-md-8">
+                                    <mat-form-field class="example-full-width">
+
+<!--                                       <input matInput placeholder="Etat" type="text" name="etat" [ngModel]="defaultLibre">-->
+                                        <mat-select name="type" placeholder="Type" ngModel>
+                                            <mat-option value="Amphy"> Amphy</mat-option>
+                                            <mat-option value="salle TD"> Salle TD</mat-option>
+                                            <mat-option value="salle TP"> Salle TP</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+
+                            </div>
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right"[disabled]="g.invalid" >Valider</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+<!--        hna rayha ndir te3 table acces-->
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Ajouter Emplois du Temps M2 en forme de Table d'accées</h4>
+                        <p class="card-category">Ou modifier ses informations </p>
+                    </div>
+                    <div class="card-body">
+                        <form (ngSubmit)="OnSubmit3(k)" #k="ngForm">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+
+                                        <!--                                       <input matInput placeholder="Etat" type="text" name="etat" [ngModel]="defaultLibre">-->
+                                        <mat-select name="jour" placeholder="Jour" ngModel>
+                                            <mat-option value="dim"> Dimanche</mat-option>
+                                            <mat-option value="lun"> Lundi</mat-option>
+                                            <mat-option value="mar"> Mardi</mat-option>
+                                            <mat-option value="mer"> Mercredi</mat-option>
+                                            <mat-option value="jeu"> Jeudi</mat-option>
+                                            <mat-option value="sam"> Samedi</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+
+                                        <mat-select name="seance" placeholder="Seance" ngModel>
+                                            <mat-option value="08:30"> 08:30-10:00</mat-option>
+                                            <mat-option value="10:00">10:00-11:30 </mat-option>
+                                            <mat-option value="11:30"> 11:30-13:00</mat-option>
+                                            <mat-option value="13:00"> 13:00-14:30</mat-option>
+                                            <mat-option value="14:30"> 14:30-16:00</mat-option>
+
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-md-8">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Address email" type="email" name="email" ngModel required>
+                                    </mat-form-field>
+                                </div>
+
+                            </div>
+
+
+
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right"[disabled]="k.invalid" >Valider</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+</div>
